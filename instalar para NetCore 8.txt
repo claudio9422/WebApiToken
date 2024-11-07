@@ -1,0 +1,55 @@
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.AspNetCore.Authentication.JwtBearer
+
+
+scaffold-dbcontext -provider Microsoft.EntityFrameworkCore.SqlServer -connection "Data Source=uscdvwsqldb047.logistics.corp;Initial Catalog=b2b_Usuario;User Id=b2b-user;Password=W3lc0m3C3v4123;TrustServerCertificate=true;"  -OutputDir Models
+
+---------------------------------------------------------------------------------------
+
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
+using WebApi.Models;
+
+---------------------------------------------------------------------------------------
+
+using (SHA256 sha256Hash = SHA256.Create())
+{
+    //Computar el hash
+    byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(texto));
+
+    //Convertir el array de bytes a string
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < builder.Length; i++)
+    {
+        builder.Append(bytes[i].ToString("x2"));
+    }
+    return builder.ToString();
+}
+
+---------------------------------------------------------------------------------------
+
+using Microsoft.EntityFrameworkCore;
+using WebApi.Custom;
+using WebApi.Models;
+using WebApi.Models.DTOs;
+using Microsoft.AspNetCore.Authorization;
+
+---------------------------------------------------------------------------------------
+
+https://www.youtube.com/watch?v=hB8jW0FaI9k
+
+Somee.com
+
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
